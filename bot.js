@@ -23,6 +23,7 @@ function movieRequest(eventMsg){
 	var tweetText = eventMsg.text;
 	var from = eventMsg.user.screen_name;
 	var movieTitle = tweetText.substring(17, tweetText.length);
+	var year = 0;
 
 	if(replyto === 'moviereleasebot'){
 		var releaseInfo;
@@ -31,7 +32,9 @@ function movieRequest(eventMsg){
 		}
 		else {
 			var array = movieTitle.split("/");
-			releaseInfo = getReleaseDateWithYear(array[0], array[1]);
+			movieTitle = array[0];
+			year = array[1];
+			releaseInfo = getReleaseDateWithYear(movieTitle, year);
 		}
 		console.log(releaseInfo);
 
@@ -48,7 +51,10 @@ function movieRequest(eventMsg){
 			}
 		}
 		else{
-			tweet('.@' + from + ' I am sorry, it seems here are no films by that name.');
+			if(year === 0)
+				tweet('.@' + from + ' I am sorry, it seems there are no films by the name '+ movieTitle);
+			else
+				tweet('.@' + from + ' I am sorry, it seems there are no films by the name '+ movieTitle + 'during the year ' + year);
 		}
 	}
 }
