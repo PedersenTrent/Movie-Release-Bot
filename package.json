@@ -1,0 +1,19 @@
+{
+  "name": "Movie Release Bot",
+  "version": "1.0.0",
+  "description": "Bot that tweets movie release dates when tweeted movie titles.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Trent Pedersen",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jsdom": "^11.0.0",
+    "moment": "^2.18.1",
+    "twit": "^2.2.5",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
