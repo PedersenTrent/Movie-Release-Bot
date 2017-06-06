@@ -1,5 +1,5 @@
 {
-  "name": "Movie Release Bot",
+  "name": "Movie-Release-Bot",
   "version": "1.0.0",
   "description": "Bot that tweets movie release dates when tweeted movie titles.",
   "main": "bot.js",
